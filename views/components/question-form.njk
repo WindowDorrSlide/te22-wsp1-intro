@@ -2,7 +2,7 @@
   {% for question in questions %}
     <h2>{{ question.text }}</h2>
     <ul>
-      {% set questionId = "answer-" + loop.index %}
+      {% set questionId = "question-" + loop.index %}
       {% for answer in question.answers %}
         <li>
           <input 

@@ -1,6 +1,7 @@
 import express from "express"
 import nunjucks from "nunjucks"
 import morgan from "morgan"
+import bodyParser from "body-parser"
 
 import indexRouter from "./routes/index.js"
 import searchRouter from "./routes/search.js"
@@ -14,9 +15,11 @@ nunjucks.configure("views", {
 })
 app.use(express.static("public"))
 app.use(morgan("dev"))
-app.use("/search", searchRouter)
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use("/", indexRouter)
+app.use("/search", searchRouter)
 app.use("/quiz", quizRouter)
 
 // testa med att surfa localhost:3000/asdfhjk
