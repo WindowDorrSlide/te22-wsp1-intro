@@ -3,10 +3,6 @@
 <main class="container">
   <h1>{{message}}</h1>
 
-  <ul>
-    {% for question in questions %}
-      <li>{{ question.text }}</li>
-    {% endfor %}
-  </ul>
+  {% include "components/question-form.njk" %}
 </main>
 {% endblock %}

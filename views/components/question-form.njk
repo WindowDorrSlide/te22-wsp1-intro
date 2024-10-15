@@ -1,0 +1,19 @@
+<form action="/quiz/end" method="post">
+  {% for question in questions %}
+    <label for="answers">{{ question.text }}</label>
+    <ul>
+      {% set questionId = loop.index %}
+      {% for answer in question.answers %}
+        <li>
+          <input 
+            type="radio"
+            id="answer-{{ questionId }}"
+            name="answer-{{questionId}}"
+            value="{{ answer }}">
+          <label for="answers">{{ answer }}</label>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  <button type="submit">Skicka</button>
+</form>
