@@ -2,7 +2,7 @@ import express from "express"
 import nunjucks from "nunjucks"
 import morgan from "morgan"
 import bodyParser from "body-parser"
-
+// npm i body-parser
 import indexRouter from "./routes/index.js"
 import searchRouter from "./routes/search.js"
 import quizRouter from "./routes/quiz.js"

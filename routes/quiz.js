@@ -7,19 +7,22 @@ router.get("/", (req, res) => {
     })
 })
 
+const questions = [
+  {
+    id: "q1",
+    text: "Hur många hjul har en bil?",
+    answers: [3, 12, 5, 4],
+    correctAnswer: 4
+  },
+  {
+    id: "q2",
+    text: "Hur många ben har en gnu?",
+    answers: ["två", "sju", "tre", "fyra"],
+    correctAnswer: "fyra",
+  }
+]
+
 router.get("/questions", (req, res) => {
-  const questions = [
-    {
-      text: "Hur många hjul har en bil?",
-      answers: [3, 12, 5, 4],
-      correctAnswer: 4
-    },
-    {
-      text: "Hur många ben har en gnu?",
-      answers: ["två", "sju", "tre", "fyra"],
-      correctAnswer: "fyra",
-    }
-  ]
   res.render("questions.njk", {
     message: "Frågor",
     questions
@@ -28,9 +31,16 @@ router.get("/questions", (req, res) => {
 
 router.post("/end", (req, res) => {
   const answers = req.body
-  console.log(answers)
+  console.log(answers)  
+  questions.forEach(question => {
+    const answer = answers[question.id]
+    if (answer == question.correctAnswer) {
+      console.log("Du har svarat rätt på fråga : ", question.id)
+    }
+  })
   res.json(answers)
 })
+// rad 4 , 18, 19 i server.js
 
 export default router
 
