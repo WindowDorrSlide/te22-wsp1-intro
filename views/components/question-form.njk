@@ -1,14 +1,14 @@
 <form action="/quiz/end" method="post">
   {% for question in questions %}
-    <label for="answers">{{ question.text }}</label>
+    <h2>{{ question.text }}</h2>
     <ul>
-      {% set questionId = loop.index %}
+      {% set questionId = "answer-" + loop.index %}
       {% for answer in question.answers %}
         <li>
           <input 
             type="radio"
-            id="answer-{{ questionId }}"
-            name="answer-{{questionId}}"
+            id="{{ questionId }}"
+            name="{{questionId}}"
             value="{{ answer }}">
           <label for="answers">{{ answer }}</label>
         </li>
