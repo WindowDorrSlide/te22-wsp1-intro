@@ -7,3 +7,11 @@ body {
   max-width: 65ch;
   margin-inline: auto;
 }
+
+.wrong {
+  background-color: red;
+}
+
+.correct {
+  background-color: green;
+}

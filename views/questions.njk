@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+{% block content %}
+<main>
+
+  <h1>{{message}}</h1>
+  <ul>
+
+    <form action="/quiz/answer" method="post">
+      {% for question in questions %}
+      <li>
+        <span>{{ question.text }}</span>
+        <br>
+        {% for answer in question.answer %}
+        <input type="radio" name="q{{ question.id }}" value="{{ answer }}">
+        <label for="q{{ question.id }}">{{ answer }}</label><br>
+        {% endfor %}
+      </li>
+
+      {% endfor %}
+      <input type="submit">
+    </form>
+  </ul>
+
+</main>
+{% endblock %}
