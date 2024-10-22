@@ -8,6 +8,7 @@ body {
   margin-inline: auto;
 }
 
+<<<<<<< HEAD
 .wrong {
   background-color: red;
 }
@@ -15,3 +16,18 @@ body {
 .correct {
   background-color: green;
 }
+=======
+main {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  li {
+    margin-right: 1em;
+  }
+}
+>>>>>>> a846c8407dcedb31061b52e84c6d298bc6d59b3f
